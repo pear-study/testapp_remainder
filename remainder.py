@@ -66,7 +66,7 @@ frame3 = tk.Frame(window)
 frame3.pack(pady = 10)
 
 add_button = tk.Button(frame3, text = "タスクの追加",command = add_task) #ウィジェットの追加ボタン
-add_button.pack()
+add_button.pack() #タスク追加しょり
 
 #window.protocol("WM_DELETE_WINDOW",save_task)
 
