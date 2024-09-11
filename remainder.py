@@ -24,8 +24,8 @@ def clear_task():
     text1.config(bg = "#99ff99")
     check_button.config(text = "済")
 
-window = tk.Tk()
-window.title("リマインダー")
+window = tk.Tk() #ウィンドウを作成
+window.title("リマインダー") #タイトル設定
 
 window.geometry("400x400") #ウィンドウサイズを変更
 main_color = "#dcdcdc" #グローバルカラーの設定
@@ -41,11 +41,13 @@ date.pack()
 frame2 = tk.Frame(window)
 frame2.pack()
 
-check_button = tk.Button(frame2, text = "未", command = clear_task)
+check_button = tk.Button(frame2, text = "未", command = clear_task) #ステータスボタンの設置
 check_button.grid(row = 0,column = 0)
 text1 = tk.Text(frame2,height = 1, width = 30,bg ="#ff9999") #テキストボックスの設置
 text1.grid(row = 0, column = 1)
 
-window.protocol("WM_DELETE_WINDOW",save_task)
+open_task() #保存したタスクを読み取る
+
+window.protocol("WM_DELETE_WINDOW",save_task) #ウィンドウを閉じるときにタスクを保存する
 
 window.mainloop()
